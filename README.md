@@ -1,2 +1,2 @@
-# KelpyFoodMod
-A mod that adds new, easy and practical to craft foods for minecraft.
+# Kelpy's Food Mod
+Eating is necessary to survive during the game, however, getting access to food isn't that easy in some situations. And I get it! We sometimes just want to enjoy the game, but food is always a problem, and looking for crumbs will only work for so long. This is why Kelpy's Food Mod is here! This mod offers a variety of highly nutritional foods, with most being easy to make! All of the base craftings involve vanilla items, prepared for every situation!
