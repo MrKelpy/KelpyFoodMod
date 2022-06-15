@@ -1,11 +1,15 @@
 package com.mrkelpy.kelpysfoodmod;
 import com.mojang.logging.LogUtils;
 import com.mrkelpy.kelpysfoodmod.setup.Registration;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
+
 
 @Mod(KelpysFoodMod.MODID)
 public class KelpysFoodMod {
