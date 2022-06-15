@@ -1,18 +1,14 @@
 package com.mrkelpy.kelpysfoodmod.items;
-import com.mrkelpy.kelpysfoodmod.KelpysFoodMod;
-import com.mrkelpy.kelpysfoodmod.setup.Registration;
+
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.commands.Commands;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import org.apache.logging.log4j.core.jmx.Server;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -36,7 +32,7 @@ public class Dango extends Item {
     private static Item.Properties buildProperties() {
 
         Item.Properties properties = new Item.Properties();
-        properties.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8F).alwaysEat().fast().build());
+        properties.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.9F).alwaysEat().build());
         properties.tab(CreativeModeTab.TAB_FOOD);
 
         return properties;
@@ -57,7 +53,7 @@ public class Dango extends Item {
 
             // Try to give a stick to the player
             ItemStack stickStack = new ItemStack(Items.STICK);
-            if (serverplayer.getInventory().add(stickStack) && itemStack.isEmpty()) {
+            if (!serverplayer.getInventory().add(stickStack)) {
 
                 // If the player's inventory is full, drop the stick on the ground
                 serverplayer.drop(stickStack, false);
