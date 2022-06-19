@@ -2,21 +2,16 @@ package com.mrkelpy.kelpysfoodmod.items.recipe.Pestle;
 
 import com.mrkelpy.kelpysfoodmod.setup.Registration;
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 
-
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.Objects;
 
 /**
  * This class is responsible for defining the Recipe Object that carries the information
@@ -35,7 +30,7 @@ public class PestleRecipe implements Recipe<Container> {
     private final ResourceLocation ID;
 
     // To be set during serialization
-    public Ingredient ingredient;
+    public ItemStack ingredient;
     public ItemStack remains;
     public ItemStack product;
     public int productCount;
@@ -51,13 +46,14 @@ public class PestleRecipe implements Recipe<Container> {
      * Ex. Checking if all the ingredients exist in the Container in the proper order, etc...
      * <br>
      * <br>
-     * In this case, checks if the main hand contains a pestle, if so, return true.
+     * In this case, checks if the main hand contains a pestle, and if the ingredient is in the offhand.
      */
     @Override
     public boolean matches(Container container, Level world) {
 
         if (!world.isClientSide() && container instanceof Inventory inventory)
-            return inventory.getSelected().equals(new ItemStack(Registration.PESTLE.get()));
+            return inventory.getSelected().equals(new ItemStack(Registration.PESTLE.get())) &&
+                    inventory.getItem(Inventory.SLOT_OFFHAND).equals(this.ingredient);
 
         return false;
     }

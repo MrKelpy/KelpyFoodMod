@@ -12,8 +12,6 @@ import com.mrkelpy.kelpysfoodmod.items.soup.SeedSoup;
 import com.mrkelpy.kelpysfoodmod.items.soup.SweetPorridge;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -45,6 +43,6 @@ public class Registration {
     /**
      * RECIPE REGISTRATION
      */
-    public static final RegistryObject<RecipeSerializer<?>> PESTLE_SERIALIZER =
+    public static final RegistryObject<PestleRecipeSerializer> PESTLE_SERIALIZER =
             RECIPES.register("pestle", PestleRecipeSerializer::new);
 }
