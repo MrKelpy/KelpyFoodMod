@@ -7,12 +7,12 @@ import net.minecraft.world.item.Item;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+/**
+ * This class implements all the logic and features of the SeedSoup item.
+ */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class SeedSoup extends Item {
-    /**
-     * This class implements all the logic and features of the SeedSoup item.
-     */
 
     private static final Item.Properties itemProperties = SeedSoup.buildProperties();
 

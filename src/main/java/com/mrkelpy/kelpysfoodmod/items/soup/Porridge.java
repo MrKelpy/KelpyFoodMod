@@ -6,12 +6,12 @@ import net.minecraft.world.item.Item;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+/**
+ * This class implements all the logic and features of the Porridge item.
+ */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class Porridge extends Item {
-    /**
-     * This class implements all the logic and features of the Porridge item.
-     */
 
     private static final Item.Properties itemProperties = Porridge.buildProperties();
 

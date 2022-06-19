@@ -1,0 +1,8 @@
+{
+    "type": "kelpysfoodmod:pestle_crafting",
+    "ingredient": "kelpysfoodmod:seed_soup",
+    "result": {
+        "item": "kelpysfoodmod:porridge",
+        "count": 1
+    }
+}

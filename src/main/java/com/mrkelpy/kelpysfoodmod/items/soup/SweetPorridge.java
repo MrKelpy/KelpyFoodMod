@@ -1,5 +1,4 @@
-package com.mrkelpy.kelpysfoodmod.items.mochi;
-
+package com.mrkelpy.kelpysfoodmod.items.soup;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
@@ -8,15 +7,15 @@ import net.minecraft.world.item.Item;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
- * This class implements all the logic and features of the GreenMochi item.
+ * This class implements all the logic and features of the SweetPorridge item.
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class GreenMochi extends Item {
+public class SweetPorridge extends Item {
 
-    private static final Item.Properties itemProperties = GreenMochi.buildProperties();
+    private static final Properties itemProperties = SweetPorridge.buildProperties();
 
-    public GreenMochi() {
+    public SweetPorridge() {
         super(itemProperties);
     }
 
@@ -27,7 +26,7 @@ public class GreenMochi extends Item {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).alwaysEat().fast().build());
+        properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.9F).build());
         properties.tab(CreativeModeTab.TAB_FOOD);
 
         return properties;

@@ -12,12 +12,12 @@ import net.minecraft.world.level.Level;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+/**
+ * This class implements all the logic and features of the Dango item.
+ */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class Dango extends Item {
-    /**
-     * This class implements all the logic and features of the Dango item.
-     */
 
     public static Item.Properties itemProperties = Dango.buildProperties();
 
