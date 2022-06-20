@@ -2,7 +2,7 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "kelpsfoodmod:porridge"
+            "item": "kelpysfoodmod:porridge"
         },
         {
             "item": "minecraft:sugar"

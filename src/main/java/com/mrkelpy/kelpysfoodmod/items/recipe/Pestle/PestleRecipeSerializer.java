@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.registries.ForgeRegistryEntry;
@@ -33,10 +34,14 @@ public class PestleRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<
 
         // The "arbitrary" parsing parameters are only a design choice with the recipes I've designed.
         PestleRecipe recipe = new PestleRecipe(recipeId);
-        recipe.ingredient = CraftingHelper.getItemStack(json.getAsJsonObject("ingredient"), false);
-        recipe.remains = CraftingHelper.getItemStack(json.getAsJsonObject("remains"), false);
-        recipe.product = CraftingHelper.getItemStack(json.getAsJsonObject("result").getAsJsonObject("item"), false);
+        recipe.ingredient = new ItemStack(CraftingHelper.getItem(json.get("ingredient").getAsString(), false));
+        recipe.product = new ItemStack(CraftingHelper.getItem(json.getAsJsonObject("result").get("item").getAsString(), false));
         recipe.productCount = json.getAsJsonObject("result").get("count").getAsInt();
+        recipe.remains = null;
+
+        // If there is a "remains" key in the JSON, then we'll set the remains to an ItemStack
+        if (json.get("remains") != null)
+            recipe.remains = new ItemStack(CraftingHelper.getItem(json.get("remains").getAsString(), false));
 
         return recipe;
     }

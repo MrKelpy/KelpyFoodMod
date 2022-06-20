@@ -26,7 +26,7 @@ public class Porridge extends Item {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6F).build());
+        properties.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).build());
         properties.tab(CreativeModeTab.TAB_FOOD);
 
         return properties;

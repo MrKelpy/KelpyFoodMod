@@ -51,15 +51,22 @@ public class PestleRecipe implements Recipe<Container> {
     @Override
     public boolean matches(Container container, Level world) {
 
+        // Serverside assertion and container validation & downcasting
         if (!world.isClientSide() && container instanceof Inventory inventory)
-            return inventory.getSelected().equals(new ItemStack(Registration.PESTLE.get())) &&
-                    inventory.getItem(Inventory.SLOT_OFFHAND).equals(this.ingredient);
+
+            // Check if the main hand contains a pestle and if the ingredient is in the offhand
+            return inventory.getSelected().getItem().equals(
+                    new ItemStack(Registration.PESTLE.get()).getItem())
+                    && inventory.getItem(Inventory.SLOT_OFFHAND).getItem()
+                    .equals(this.ingredient.getItem());
 
         return false;
     }
 
     /**
-     * This method takes in all the information estabilished and creates the result item. <br>
+     * This method takes in all the information estabilished and creates the result item.
+     * (Happens once the player takes the result item out of, say, the crafting table)
+     * <br>
      * The return value of this method is the actual ItemStack of the product.
      * <br>
      * <br>
@@ -70,13 +77,12 @@ public class PestleRecipe implements Recipe<Container> {
     public ItemStack assemble(Container container) {
 
         Inventory inventory = (Inventory) container;
-        inventory.getSelected().setDamageValue(inventory.getSelected().getDamageValue() + 1);
 
         // Check if there should be a remaining item, and if so, set it as the offhand item
         if (this.remains != null && inventory.getItem(Inventory.SLOT_OFFHAND).getCount() == 1)
             inventory.setItem(Inventory.SLOT_OFFHAND, this.remains);
 
-        return this.product;
+        return this.product.copy();
     }
 
     /**
@@ -91,7 +97,8 @@ public class PestleRecipe implements Recipe<Container> {
 
     /**
      * This class returns the ItemStack of the result item. This class does not return the product
-     * in itself, rather a copy of it, for comparison/checking purposes.
+     * in itself, rather a copy of it, so that any changes made to the product will not affect the original
+     * stack in the recipe.
      */
     @Override
     public ItemStack getResultItem() {

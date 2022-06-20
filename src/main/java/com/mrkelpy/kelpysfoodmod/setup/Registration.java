@@ -7,11 +7,14 @@ import com.mrkelpy.kelpysfoodmod.items.mochi.GreenMochi;
 import com.mrkelpy.kelpysfoodmod.items.mochi.RedMochi;
 import com.mrkelpy.kelpysfoodmod.items.mochi.WhiteMochi;
 import com.mrkelpy.kelpysfoodmod.items.recipe.Pestle.PestleRecipeSerializer;
+import com.mrkelpy.kelpysfoodmod.items.recipe.Pestle.PestleRecipeType;
 import com.mrkelpy.kelpysfoodmod.items.soup.Porridge;
 import com.mrkelpy.kelpysfoodmod.items.soup.SeedSoup;
 import com.mrkelpy.kelpysfoodmod.items.soup.SweetPorridge;
+import net.minecraft.core.Registry;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -24,8 +27,11 @@ public class Registration {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, KelpysFoodMod.MODID);
 
-    public static final DeferredRegister<RecipeSerializer<?>> RECIPES =
+    public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS =
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, KelpysFoodMod.MODID);
+
+    public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES =
+            DeferredRegister.create(Registry.RECIPE_TYPE_REGISTRY, KelpysFoodMod.MODID);
 
 
     /**
@@ -43,6 +49,9 @@ public class Registration {
     /**
      * RECIPE REGISTRATION
      */
-    public static final RegistryObject<PestleRecipeSerializer> PESTLE_SERIALIZER =
-            RECIPES.register("pestle", PestleRecipeSerializer::new);
+    public static final RegistryObject<RecipeSerializer<?>> PESTLE_SERIALIZER =
+            RECIPE_SERIALIZERS.register(PestleRecipeType.ID, PestleRecipeSerializer::new);
+
+    public static final RegistryObject<RecipeType<?>> PESTLE_RECIPE_TYPE =
+            RECIPE_TYPES.register(PestleRecipeType.ID, PestleRecipeType::new);
 }

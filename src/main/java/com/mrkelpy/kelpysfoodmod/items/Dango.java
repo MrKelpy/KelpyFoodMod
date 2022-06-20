@@ -1,5 +1,6 @@
 package com.mrkelpy.kelpysfoodmod.items;
 
+import com.mrkelpy.kelpysfoodmod.utils.ItemUtils;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
@@ -49,16 +50,9 @@ public class Dango extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack itemStack, Level world, LivingEntity livingEntity) {
 
-        if (!world.isClientSide() && livingEntity instanceof ServerPlayer serverplayer) {
+        if (!world.isClientSide() && livingEntity instanceof ServerPlayer serverplayer)
+            ItemUtils.giveItem(new ItemStack(Items.STICK), serverplayer);
 
-            // Try to give a stick to the player
-            ItemStack stickStack = new ItemStack(Items.STICK);
-            if (!serverplayer.getInventory().add(stickStack)) {
-
-                // If the player's inventory is full, drop the stick on the ground
-                serverplayer.drop(stickStack, false);
-            }
-        }
         return super.finishUsingItem(itemStack, world, livingEntity);
     }
 }

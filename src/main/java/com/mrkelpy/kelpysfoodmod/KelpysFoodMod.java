@@ -2,7 +2,6 @@ package com.mrkelpy.kelpysfoodmod;
 
 import com.mojang.logging.LogUtils;
 import com.mrkelpy.kelpysfoodmod.setup.Registration;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -21,6 +20,8 @@ public class KelpysFoodMod {
     public KelpysFoodMod() {
         IEventBus modbus = FMLJavaModLoadingContext.get().getModEventBus();
         Registration.ITEMS.register(modbus);
-        Registration.RECIPES.register(modbus);
+        Registration.RECIPE_SERIALIZERS.register(modbus);
+        Registration.RECIPE_TYPES.register(modbus);
     }
+
 }

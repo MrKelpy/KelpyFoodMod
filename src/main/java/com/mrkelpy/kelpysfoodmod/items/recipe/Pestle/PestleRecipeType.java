@@ -11,7 +11,7 @@ import net.minecraft.world.item.crafting.RecipeType;
  */
 public class PestleRecipeType implements RecipeType<PestleRecipe> {
 
-    private PestleRecipeType() { }  // Constructor so we can get the class instance
+    public PestleRecipeType() { }  // Constructor so we can get the class instance
 
     /**
      * This property is required in order to provide the Recipe<T> class with the correct type

@@ -27,7 +27,7 @@ public class SeedSoup extends Item {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.4F).build());
+        properties.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).build());
         properties.tab(CreativeModeTab.TAB_FOOD);
 
         return properties;
