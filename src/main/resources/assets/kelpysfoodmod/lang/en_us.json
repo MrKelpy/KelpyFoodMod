@@ -6,5 +6,14 @@
     "item.kelpysfoodmod.seed_soup": "Seed Soup",
     "item.kelpysfoodmod.porridge": "Porridge",
     "item.kelpysfoodmod.pestle": "Pestle",
-    "item.kelpysfoodmod.sweet_porridge": "Sweet Porridge"
+    "item.kelpysfoodmod.sweet_porridge": "Sweet Porridge",
+    "item.kelpysfoodmod.meat_skewer": "Meat Skewer",
+    "item.kelpysfoodmod.boiled_egg": "Boiled Egg",
+    "item.kelpysfoodmod.cheese": "Cheese",
+    "item.kelpysfoodmod.coagulant": "Coagulant",
+    "item.kelpysfoodmod.coagulated_milk": "Coagulated Milk",
+    "item.kelpysfoodmod.coagulated_soy_milk": "Coagulated Soy Milk",
+    "item.kelpysfoodmod.soy_milk": "Soy Milk",
+    "item.kelpysfoodmod.soybean": "Soybean",
+    "item.kelpysfoodmod.tofu": "Tofu"
 }

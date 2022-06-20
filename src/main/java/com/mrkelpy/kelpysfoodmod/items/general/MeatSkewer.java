@@ -1,4 +1,4 @@
-package com.mrkelpy.kelpysfoodmod.items;
+package com.mrkelpy.kelpysfoodmod.items.general;
 
 import com.mrkelpy.kelpysfoodmod.utils.ItemUtils;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -14,15 +14,15 @@ import net.minecraft.world.level.Level;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
- * This class implements all the logic and features of the Dango item.
+ * This class implements all the logic and features of the GreenMochi item.
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class Dango extends Item {
+public class MeatSkewer extends Item {
 
-    public static Item.Properties itemProperties = Dango.buildProperties();
+    private static final Properties itemProperties = MeatSkewer.buildProperties();
 
-    public Dango() {
+    public MeatSkewer() {
         super(itemProperties);
     }
 
@@ -30,10 +30,10 @@ public class Dango extends Item {
      * Handles the creation of the item properties for this item.
      * @return [Item.Properties] The item properties.
      */
-    private static Item.Properties buildProperties() {
+    private static Properties buildProperties() {
 
-        Item.Properties properties = new Item.Properties();
-        properties.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.9F).alwaysEat().build());
+        Properties properties = new Properties();
+        properties.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).build());
         properties.tab(CreativeModeTab.TAB_FOOD);
 
         return properties;
@@ -41,8 +41,8 @@ public class Dango extends Item {
 
     /**
      * Expands upon the behaviour of the finishUsingItem method to give a stick back to the player
-     * after finishing eating Dango.
-     * @param itemStack The ItemStack of the Dango.
+     * after finishing eating a Meat Skewer.
+     * @param itemStack The ItemStack of the MeatSkewer.
      * @param world The level where the item was used.
      * @param livingEntity The entity that finished using the item
      * @return [ItemStack]

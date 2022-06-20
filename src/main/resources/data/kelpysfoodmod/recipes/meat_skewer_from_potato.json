@@ -2,17 +2,17 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:bowl"
+            "item": "minecraft:stick"
         },
         {
-            "tag": "forge:seeds"
+            "tag": "minecraft:cooked_beef"
         },
         {
-            "tag": "forge:seeds"
+            "item": "minecraft:potato"
         }
     ],
     "result": {
-        "item": "kelpysfoodmod:seed_soup",
+        "item": "kelpysfoodmod:meat_skewer",
         "count": 1
     }
 }

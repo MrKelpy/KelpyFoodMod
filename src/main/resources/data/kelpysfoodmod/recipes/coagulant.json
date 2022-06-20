@@ -5,14 +5,14 @@
             "item": "minecraft:bowl"
         },
         {
-            "tag": "forge:seeds"
+            "tag": "minecraft:mushrooms"
         },
         {
-            "tag": "forge:seeds"
+            "item": "minecraft:rotten_flesh"
         }
     ],
     "result": {
-        "item": "kelpysfoodmod:seed_soup",
+        "item": "kelpysfoodmod:coagulant",
         "count": 1
     }
 }

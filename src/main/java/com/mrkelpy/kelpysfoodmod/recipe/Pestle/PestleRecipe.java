@@ -1,4 +1,4 @@
-package com.mrkelpy.kelpysfoodmod.items.recipe.Pestle;
+package com.mrkelpy.kelpysfoodmod.recipe.Pestle;
 
 import com.mrkelpy.kelpysfoodmod.setup.Registration;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -82,6 +82,7 @@ public class PestleRecipe implements Recipe<Container> {
         if (this.remains != null && inventory.getItem(Inventory.SLOT_OFFHAND).getCount() == 1)
             inventory.setItem(Inventory.SLOT_OFFHAND, this.remains);
 
+        this.product.setCount(this.productCount);
         return this.product.copy();
     }
 

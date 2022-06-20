@@ -1,4 +1,4 @@
-package com.mrkelpy.kelpysfoodmod.items.recipe.Pestle;
+package com.mrkelpy.kelpysfoodmod.recipe.Pestle;
 
 import com.google.gson.JsonObject;
 import net.minecraft.MethodsReturnNonnullByDefault;

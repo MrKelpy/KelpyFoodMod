@@ -1,4 +1,4 @@
-package com.mrkelpy.kelpysfoodmod.items.recipe.Pestle;
+package com.mrkelpy.kelpysfoodmod.recipe.Pestle;
 
 import com.mrkelpy.kelpysfoodmod.KelpysFoodMod;
 import net.minecraft.resources.ResourceLocation;

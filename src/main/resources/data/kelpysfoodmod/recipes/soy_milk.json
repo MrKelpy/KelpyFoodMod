@@ -2,17 +2,17 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:bowl"
+            "item": "minecraft:water_bucket"
         },
         {
-            "tag": "forge:seeds"
+            "item": "kelpysfoodmod:soybean"
         },
         {
-            "tag": "forge:seeds"
+            "item": "kelpysfoodmod:soybean"
         }
     ],
     "result": {
-        "item": "kelpysfoodmod:seed_soup",
+        "item": "kelpysfoodmod:soy_milk",
         "count": 1
     }
 }

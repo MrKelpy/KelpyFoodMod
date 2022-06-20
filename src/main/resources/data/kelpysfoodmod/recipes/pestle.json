@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " S ",
+        " T ",
+        " W "
+    ],
+    "key": {
+        "S": {
+            "item": "minecraft:stick"
+        },
+        "T": {
+            "item": "minecraft:string"
+        },
+        "W": {
+            "tag": "minecraft:planks"
+        }
+    },
+    "result": {
+        "item": "kelpysfoodmod:pestle",
+        "count": 1
+    }
+}
