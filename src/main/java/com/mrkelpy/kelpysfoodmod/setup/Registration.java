@@ -3,11 +3,13 @@ package com.mrkelpy.kelpysfoodmod.setup;
 import com.mrkelpy.kelpysfoodmod.KelpysFoodMod;
 import com.mrkelpy.kelpysfoodmod.items.general.*;
 import com.mrkelpy.kelpysfoodmod.items.mediums.Coagulant;
+import com.mrkelpy.kelpysfoodmod.items.mediums.Pestle;
 import com.mrkelpy.kelpysfoodmod.items.mochi.GreenMochi;
 import com.mrkelpy.kelpysfoodmod.items.mochi.RedMochi;
 import com.mrkelpy.kelpysfoodmod.items.mochi.WhiteMochi;
 import com.mrkelpy.kelpysfoodmod.items.soup.*;
-import com.mrkelpy.kelpysfoodmod.items.mediums.Pestle;
+import com.mrkelpy.kelpysfoodmod.recipe.NoBucketRemainder.NoBucketRemainderRecipe;
+import com.mrkelpy.kelpysfoodmod.recipe.NoBucketRemainder.NoBucketRemainderRecipeType;
 import com.mrkelpy.kelpysfoodmod.recipe.Pestle.PestleRecipeSerializer;
 import com.mrkelpy.kelpysfoodmod.recipe.Pestle.PestleRecipeType;
 import net.minecraft.core.Registry;
@@ -62,4 +64,12 @@ public class Registration {
 
     public static final RegistryObject<RecipeType<?>> PESTLE_RECIPE_TYPE =
             RECIPE_TYPES.register(PestleRecipeType.ID, PestleRecipeType::new);
+
+    public static final RegistryObject<RecipeSerializer<?>> NO_BUCKET_SERIALIZER =
+            RECIPE_SERIALIZERS.register(NoBucketRemainderRecipeType.ID, NoBucketRemainderRecipe.Serializer::new);
+
+    public static final RegistryObject<RecipeType<?>> NO_BUCKET_RECIPE_TYPE =
+            RECIPE_TYPES.register(NoBucketRemainderRecipeType.ID, NoBucketRemainderRecipeType::new);
+
+
 }

@@ -1,5 +1,5 @@
 {
-    "type": "minecraft:crafting_shapeless",
+    "type": "kelpysfoodmod:crafting_no_bucket_remainder",
     "ingredients": [
         {
             "item": "kelpysfoodmod:soy_milk"

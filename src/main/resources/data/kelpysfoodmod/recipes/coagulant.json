@@ -2,10 +2,10 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:bowl"
+            "item": "minecraft:glass_bottle"
         },
         {
-            "tag": "minecraft:mushrooms"
+            "tag": "forge:mushrooms"
         },
         {
             "item": "minecraft:rotten_flesh"

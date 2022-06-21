@@ -32,7 +32,7 @@ public class CoagulatedMilk extends Item {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.food(new FoodProperties.Builder().nutrition(0).saturationMod(0).build());
+        properties.food(new FoodProperties.Builder().nutrition(0).saturationMod(0).alwaysEat().build());
         properties.tab(CreativeModeTab.TAB_MATERIALS);
         properties.stacksTo(1);
 
@@ -57,7 +57,7 @@ public class CoagulatedMilk extends Item {
 
         if (!world.isClientSide() && livingEntity instanceof ServerPlayer serverplayer) {
             ItemUtils.giveItem(new ItemStack(Items.BUCKET), serverplayer);
-            serverplayer.addEffect(new MobEffectInstance(MobEffects.HUNGER, 10, 2));
+            serverplayer.addEffect(new MobEffectInstance(MobEffects.HUNGER, 10*20, 2));
         }
 
         return super.finishUsingItem(itemStack, world, livingEntity);

@@ -30,7 +30,7 @@ public class SoyMilk extends Item {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F).build());
+        properties.food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F).alwaysEat().build());
         properties.tab(CreativeModeTab.TAB_FOOD);
         properties.stacksTo(1);
 
