@@ -15,5 +15,7 @@
     "item.kelpysfoodmod.coagulated_soy_milk": "Coagulated Soy Milk",
     "item.kelpysfoodmod.soy_milk": "Soy Milk",
     "item.kelpysfoodmod.soybean": "Soybean",
-    "item.kelpysfoodmod.tofu": "Tofu"
+    "item.kelpysfoodmod.tofu": "Tofu",
+
+    "blocks.kelpysfoodmod.soybean_plant": "Soybeans"
 }

@@ -1,5 +1,5 @@
 {
-    "type": "kelpysfoodmod:crafting_no_bucket_remainder",
+    "type": "kelpysfoodmod:no_bucket_remainder_crafting",
     "ingredients": [
         {
             "item": "minecraft:water_bucket"

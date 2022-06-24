@@ -16,6 +16,9 @@ import javax.annotation.ParametersAreNonnullByDefault;
 /**
  * This class is responsible for acting as a custom JSON Serializer for the recipes added
  * for a given RecipeType. In this case, for the PestleRecipe.
+ * <br>
+ * The serializer's usage is directly referenced in the JSON file for any recipe, under the "type"
+ * field.
  */
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
@@ -24,6 +27,12 @@ public class PestleRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<
 
     public PestleRecipeSerializer() { }
     public static final PestleRecipeSerializer INSTANCE = new PestleRecipeSerializer();
+
+    /**
+     * This property is the same that will be specified under the "type" field
+     * in the JSON Recipes.
+     */
+    public static final String ID = "pestle_crafting";
 
     /**
      * Parses out the specific data in any PestleRecipeType recipe JSON and applies it to a PestleRecipe instance, which
@@ -37,11 +46,6 @@ public class PestleRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<
         recipe.ingredient = new ItemStack(CraftingHelper.getItem(json.get("ingredient").getAsString(), false));
         recipe.product = new ItemStack(CraftingHelper.getItem(json.getAsJsonObject("result").get("item").getAsString(), false));
         recipe.productCount = json.getAsJsonObject("result").get("count").getAsInt();
-        recipe.remains = null;
-
-        // If there is a "remains" key in the JSON, then we'll set the remains to an ItemStack
-        if (json.get("remains") != null)
-            recipe.remains = new ItemStack(CraftingHelper.getItem(json.get("remains").getAsString(), false));
 
         return recipe;
     }
@@ -57,7 +61,6 @@ public class PestleRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<
 
         PestleRecipe recipe = new PestleRecipe(recipeId);
         recipe.ingredient = buffer.readItem();
-        recipe.remains = buffer.readItem();
         recipe.product = buffer.readItem();
         recipe.productCount = buffer.readVarInt();
         return recipe;
@@ -73,7 +76,6 @@ public class PestleRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<
     public void toNetwork(FriendlyByteBuf buffer, PestleRecipe recipe) {
 
         buffer.writeItem(recipe.ingredient);
-        buffer.writeItem(recipe.remains);
         buffer.writeInt(recipe.productCount);
         buffer.writeItem(recipe.product);
     }

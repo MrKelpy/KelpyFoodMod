@@ -33,8 +33,9 @@ public class CoagulatedMilk extends Item {
 
         Properties properties = new Properties();
         properties.food(new FoodProperties.Builder().nutrition(0).saturationMod(0).alwaysEat().build());
-        properties.tab(CreativeModeTab.TAB_MATERIALS);
+        properties.tab(CreativeModeTab.TAB_FOOD);
         properties.stacksTo(1);
+        properties.craftRemainder(Items.BUCKET);
 
         return properties;
     }

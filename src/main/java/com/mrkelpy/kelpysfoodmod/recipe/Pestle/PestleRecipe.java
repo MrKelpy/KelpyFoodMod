@@ -28,10 +28,10 @@ public class PestleRecipe implements Recipe<Container> {
      * NOTE: The ID field should probably be implemented this way for ease of use later on registration.
      */
     private final ResourceLocation ID;
+    private boolean remainderFlag;
 
     // To be set during serialization
     public ItemStack ingredient;
-    public ItemStack remains;
     public ItemStack product;
     public int productCount;
 
@@ -65,13 +65,9 @@ public class PestleRecipe implements Recipe<Container> {
 
     /**
      * This method takes in all the information estabilished and creates the result item.
-     * (Happens once the player takes the result item out of, say, the crafting table)
+     * (Happens once the player creates a valid recipe that needs to show the output.)
      * <br>
      * The return value of this method is the actual ItemStack of the product.
-     * <br>
-     * <br>
-     * In this case, damages the pestle, and checks if there should be a remaining item. If so, sets the remaining item
-     * as the offhand item for the inventory, and returns the product.
      */
     @Override
     public ItemStack assemble(Container container) {
@@ -79,12 +75,15 @@ public class PestleRecipe implements Recipe<Container> {
         Inventory inventory = (Inventory) container;
 
         // Check if there should be a remaining item, and if so, set it as the offhand item
-        if (this.remains != null && inventory.getItem(Inventory.SLOT_OFFHAND).getCount() == 1)
-            inventory.setItem(Inventory.SLOT_OFFHAND, this.remains);
+        if (inventory.getItem(Inventory.SLOT_OFFHAND).hasContainerItem()) {
+            inventory.setItem(Inventory.SLOT_OFFHAND, inventory.getItem(Inventory.SLOT_OFFHAND).getContainerItem());
+            this.remainderFlag = true;
+        }
 
-        this.product.setCount(this.productCount);
+        this.product.setCount(this.productCount);  // Sets the product count on assembly
         return this.product.copy();
     }
+
 
     /**
      * This class defines whether the recipe can be crafted within certain dimensions, and which
@@ -131,5 +130,8 @@ public class PestleRecipe implements Recipe<Container> {
         return PestleRecipeType.INSTANCE;
     }
 
+    public boolean getRemainderFlag() {
+        return remainderFlag;
+    }
 }
 

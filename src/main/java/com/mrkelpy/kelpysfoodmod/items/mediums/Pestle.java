@@ -112,7 +112,9 @@ public class Pestle extends Item {
         ItemStack product = recipe.assemble(inventory);
         pestleItem.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(InteractionHand.MAIN_HAND));
         ItemUtils.giveItem(product, player);
-        inventory.getItem(Inventory.SLOT_OFFHAND).setCount(inventory.getItem(Inventory.SLOT_OFFHAND).getCount() - 1);
+
+        if (!recipe.getRemainderFlag())
+            inventory.getItem(Inventory.SLOT_OFFHAND).setCount(inventory.getItem(Inventory.SLOT_OFFHAND).getCount() - 1);
 
         return true;
     }

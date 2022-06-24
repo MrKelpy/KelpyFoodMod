@@ -1,6 +1,7 @@
 package com.mrkelpy.kelpysfoodmod.setup;
 
 import com.mrkelpy.kelpysfoodmod.KelpysFoodMod;
+import com.mrkelpy.kelpysfoodmod.blocks.SoybeanCropBlock;
 import com.mrkelpy.kelpysfoodmod.items.general.*;
 import com.mrkelpy.kelpysfoodmod.items.mediums.Coagulant;
 import com.mrkelpy.kelpysfoodmod.items.mediums.Pestle;
@@ -8,14 +9,14 @@ import com.mrkelpy.kelpysfoodmod.items.mochi.GreenMochi;
 import com.mrkelpy.kelpysfoodmod.items.mochi.RedMochi;
 import com.mrkelpy.kelpysfoodmod.items.mochi.WhiteMochi;
 import com.mrkelpy.kelpysfoodmod.items.soup.*;
-import com.mrkelpy.kelpysfoodmod.recipe.NoBucketRemainder.NoBucketRemainderRecipe;
-import com.mrkelpy.kelpysfoodmod.recipe.NoBucketRemainder.NoBucketRemainderRecipeType;
+import com.mrkelpy.kelpysfoodmod.recipe.NoBucketRemainder.NoBucketRemainderRecipeSerializer;
 import com.mrkelpy.kelpysfoodmod.recipe.Pestle.PestleRecipeSerializer;
 import com.mrkelpy.kelpysfoodmod.recipe.Pestle.PestleRecipeType;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -28,12 +29,20 @@ public class Registration {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, KelpysFoodMod.MODID);
 
+    public static final DeferredRegister<Block> BLOCKS =
+            DeferredRegister.create(ForgeRegistries.BLOCKS, KelpysFoodMod.MODID);
+
     public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS =
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, KelpysFoodMod.MODID);
 
     public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES =
             DeferredRegister.create(Registry.RECIPE_TYPE_REGISTRY, KelpysFoodMod.MODID);
 
+
+    /**
+     * BLOCKS REGISTRATION
+     */
+    public static final RegistryObject<Block> SOYBEAN_PLANT = BLOCKS.register("soybean_plant", SoybeanCropBlock::new);
 
     /**
      * ITEMS REGISTRATION
@@ -56,20 +65,17 @@ public class Registration {
     public static final RegistryObject<Item> TOFU = ITEMS.register("tofu", Tofu::new);
     public static final RegistryObject<Item> PESTLE = ITEMS.register("pestle", Pestle::new);
 
+
     /**
      * RECIPE REGISTRATION
      */
     public static final RegistryObject<RecipeSerializer<?>> PESTLE_SERIALIZER =
-            RECIPE_SERIALIZERS.register(PestleRecipeType.ID, PestleRecipeSerializer::new);
+            RECIPE_SERIALIZERS.register(PestleRecipeSerializer.ID, PestleRecipeSerializer::new);
 
     public static final RegistryObject<RecipeType<?>> PESTLE_RECIPE_TYPE =
             RECIPE_TYPES.register(PestleRecipeType.ID, PestleRecipeType::new);
 
     public static final RegistryObject<RecipeSerializer<?>> NO_BUCKET_SERIALIZER =
-            RECIPE_SERIALIZERS.register(NoBucketRemainderRecipeType.ID, NoBucketRemainderRecipe.Serializer::new);
-
-    public static final RegistryObject<RecipeType<?>> NO_BUCKET_RECIPE_TYPE =
-            RECIPE_TYPES.register(NoBucketRemainderRecipeType.ID, NoBucketRemainderRecipeType::new);
-
+            RECIPE_SERIALIZERS.register(NoBucketRemainderRecipeSerializer.ID, NoBucketRemainderRecipeSerializer::new);
 
 }

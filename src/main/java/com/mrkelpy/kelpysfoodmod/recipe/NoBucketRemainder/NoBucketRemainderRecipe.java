@@ -8,6 +8,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.ShapelessRecipe;
 
@@ -21,7 +22,6 @@ public class NoBucketRemainderRecipe extends ShapelessRecipe {
     private final ResourceLocation ID;
     private final ItemStack product;
     private final ArrayList<Item> clearList = this.buildClearList();
-
 
     public NoBucketRemainderRecipe(ResourceLocation id, String group, ItemStack result, NonNullList<Ingredient> ingredients) {
         super(id, group, result, ingredients);
@@ -46,21 +46,27 @@ public class NoBucketRemainderRecipe extends ShapelessRecipe {
     }
 
     /**
-     * Changes the assembly method of the recipe to use the NoBucketRemainder method.
-     * In this method, the product will be crafted, but any instances of buckets present in the
-     * clearList will be removed upon assembly.
+     * This method will be called right when the result item is taken out of the crafting grid, and determine
+     * if any items should stay in the crafting grid, in the form of a NonNullList, with each index representing
+     * the container slot that the remains should be put in.
+     * <br>
+     * In this case, ignores the remains of any bucket items, but allows all others.
      */
     @Override
-    public ItemStack assemble(CraftingContainer workbench) {
+    public NonNullList<ItemStack> getRemainingItems(CraftingContainer workbench) {
 
-        for (int i = 0; i < workbench.getContainerSize(); i++) {
-            var item = workbench.getItem(i);
+        NonNullList<ItemStack> remainingItems = NonNullList.withSize(workbench.getContainerSize(), ItemStack.EMPTY);
 
-            if (this.clearList.contains(item.getItem()))
-                workbench.removeItem(i, item.getCount());
+        for (int i = 0; i < workbench.getContainerSize(); ++i) {
+            ItemStack item = workbench.getItem(i);
+
+            // If the item is in the clearList, there'll be no remaining items of it.
+            if (this.clearList.contains(item.getItem())) continue;
+
+            if (item.hasContainerItem())
+                remainingItems.set(i, item.getContainerItem());
         }
-
-        return this.product.copy();
+        return remainingItems;
     }
 
     @Override
@@ -69,8 +75,13 @@ public class NoBucketRemainderRecipe extends ShapelessRecipe {
     }
 
     @Override
+    public RecipeSerializer<?> getSerializer() {
+        return NoBucketRemainderRecipeSerializer.INSTANCE;
+    }
+
+    @Override
     public RecipeType<?> getType() {
-        return NoBucketRemainderRecipeType.INSTANCE;
+        return RecipeType.CRAFTING;
     }
 }
 

@@ -1,9 +1,10 @@
 package com.mrkelpy.kelpysfoodmod.items.general;
 
+import com.mrkelpy.kelpysfoodmod.setup.Registration;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -12,12 +13,12 @@ import javax.annotation.ParametersAreNonnullByDefault;
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class Soybean extends Item {
+public class Soybean extends ItemNameBlockItem {
 
-    private static final Properties itemProperties = Soybean.buildProperties();
+    public static final Properties itemProperties = Soybean.buildProperties();
 
     public Soybean() {
-        super(itemProperties);
+        super(Registration.SOYBEAN_PLANT.get(), itemProperties);
     }
 
     /**

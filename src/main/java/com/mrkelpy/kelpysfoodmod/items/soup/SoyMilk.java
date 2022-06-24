@@ -33,6 +33,7 @@ public class SoyMilk extends Item {
         properties.food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F).alwaysEat().build());
         properties.tab(CreativeModeTab.TAB_FOOD);
         properties.stacksTo(1);
+        properties.craftRemainder(Items.BUCKET);
 
         return properties;
     }

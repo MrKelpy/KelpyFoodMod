@@ -5,9 +5,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeType;
 
 /**
- * This class is responsible for defining the Recipe Type for the Pestle Recipe.
- * All pestle recipes will be of the PestleRecipeType type, and any recipe registered
- * under this type is expected to work with the behaviour provided by the Pestle.
+ * This class is responsible for defining the Recipe Type for the Pestle Recipe. This type
+ * will be the one used by any GUIs/Containers. It defines what can use the Pestle recipes.
  */
 public class PestleRecipeType implements RecipeType<PestleRecipe> {
 
@@ -20,9 +19,9 @@ public class PestleRecipeType implements RecipeType<PestleRecipe> {
     public static final PestleRecipeType INSTANCE = new PestleRecipeType();
 
     /**
-     * This ID is the same that will go under the "type" key in the recipe JSONs for Pestle Craftings.
+     * This ID is the one that will define what containers can use pestle crafting.
      */
-    public static final String ID = "pestle_crafting";
+    public static final String ID = "pestle_recipes";
 
     /**
      * Overriding toString() with the proper Recipe ResourceLocation string for debugging
