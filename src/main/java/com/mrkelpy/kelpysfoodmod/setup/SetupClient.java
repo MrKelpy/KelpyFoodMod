@@ -12,6 +12,7 @@ public class SetupClient {
     @SubscribeEvent
     public void RenderSetup(FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(Registration.SOYBEAN_PLANT.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(Registration.RICE_PLANT.get(), RenderType.cutout());
     }
 }
 

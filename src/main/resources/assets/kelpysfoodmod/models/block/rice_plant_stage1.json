@@ -1,0 +1,6 @@
+{
+    "parent": "kelpysfoodmod:block/rice_crop",
+    "textures": {
+        "crop": "kelpysfoodmod:blocks/rice_plant_stage1"
+    }
+}

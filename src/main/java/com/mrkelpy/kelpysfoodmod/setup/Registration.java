@@ -1,14 +1,15 @@
 package com.mrkelpy.kelpysfoodmod.setup;
 
 import com.mrkelpy.kelpysfoodmod.KelpysFoodMod;
+import com.mrkelpy.kelpysfoodmod.blocks.RiceCropBlock;
 import com.mrkelpy.kelpysfoodmod.blocks.SoybeanCropBlock;
-import com.mrkelpy.kelpysfoodmod.items.general.*;
-import com.mrkelpy.kelpysfoodmod.items.mediums.Coagulant;
-import com.mrkelpy.kelpysfoodmod.items.mediums.Pestle;
-import com.mrkelpy.kelpysfoodmod.items.mochi.GreenMochi;
-import com.mrkelpy.kelpysfoodmod.items.mochi.RedMochi;
-import com.mrkelpy.kelpysfoodmod.items.mochi.WhiteMochi;
-import com.mrkelpy.kelpysfoodmod.items.soup.*;
+import com.mrkelpy.kelpysfoodmod.items.food.general.*;
+import com.mrkelpy.kelpysfoodmod.items.food.general.Coagulant;
+import com.mrkelpy.kelpysfoodmod.items.tools.Pestle;
+import com.mrkelpy.kelpysfoodmod.items.food.mochi.GreenMochi;
+import com.mrkelpy.kelpysfoodmod.items.food.mochi.RedMochi;
+import com.mrkelpy.kelpysfoodmod.items.food.mochi.WhiteMochi;
+import com.mrkelpy.kelpysfoodmod.items.food.soup.*;
 import com.mrkelpy.kelpysfoodmod.recipe.NoBucketRemainder.NoBucketRemainderRecipeSerializer;
 import com.mrkelpy.kelpysfoodmod.recipe.Pestle.PestleRecipeSerializer;
 import com.mrkelpy.kelpysfoodmod.recipe.Pestle.PestleRecipeType;
@@ -43,6 +44,7 @@ public class Registration {
      * BLOCKS REGISTRATION
      */
     public static final RegistryObject<Block> SOYBEAN_PLANT = BLOCKS.register("soybean_plant", SoybeanCropBlock::new);
+    public static final RegistryObject<Block> RICE_PLANT = BLOCKS.register("rice_plant", RiceCropBlock::new);
 
     /**
      * ITEMS REGISTRATION
@@ -63,6 +65,8 @@ public class Registration {
     public static final RegistryObject<Item> SOY_MILK = ITEMS.register("soy_milk", SoyMilk::new);
     public static final RegistryObject<Item> CHEESE = ITEMS.register("cheese", Cheese::new);
     public static final RegistryObject<Item> TOFU = ITEMS.register("tofu", Tofu::new);
+    public static final RegistryObject<Item> RICE_SEEDS = ITEMS.register("rice_seeds", RiceSeeds::new);
+    public static final RegistryObject<Item> RICE_STASH = ITEMS.register("rice_stash", RiceStash::new);
     public static final RegistryObject<Item> PESTLE = ITEMS.register("pestle", Pestle::new);
 
 

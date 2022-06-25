@@ -16,6 +16,9 @@
     "item.kelpysfoodmod.soy_milk": "Soy Milk",
     "item.kelpysfoodmod.soybean": "Soybean",
     "item.kelpysfoodmod.tofu": "Tofu",
+    "item.kelpysfoodmod.rice_seeds": "Rice Seeds",
+    "item.kelpysfoodmod.rice_stash": "Rice Stash",
 
-    "blocks.kelpysfoodmod.soybean_plant": "Soybeans"
+    "blocks.kelpysfoodmod.soybean_plant": "Soybeans",
+    "blocks.kelpysfoodmod.rice_plant": "Rice"
 }
