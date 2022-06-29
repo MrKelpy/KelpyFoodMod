@@ -24,11 +24,11 @@ import java.util.Objects;
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class Pestle extends Item {
+public class PestleItem extends Item {
 
-    public static Item.Properties itemProperties = Pestle.buildProperties();
+    public static Item.Properties itemProperties = PestleItem.buildProperties();
 
-    public Pestle() {
+    public PestleItem() {
         super(itemProperties);
     }
 

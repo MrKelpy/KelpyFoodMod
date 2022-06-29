@@ -2,7 +2,7 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:oxeye_daisy"
+            "item": "kelpysfoodmod:rice_stash"
         },
         {
             "item": "minecraft:sugar"
@@ -10,6 +10,6 @@
     ],
     "result": {
         "item": "kelpysfoodmod:white_mochi",
-        "count": 1
+        "count": 4
     }
 }

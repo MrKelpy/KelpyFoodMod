@@ -1,21 +1,21 @@
-package com.mrkelpy.kelpysfoodmod.items.food.general;
-
+package com.mrkelpy.kelpysfoodmod.items.food.ricestuffs;
 import net.minecraft.MethodsReturnNonnullByDefault;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
- * This class implements all the logic and features of the Rice Stash item.
+ * This class implements all the logic and features of the WhiteMochi item.
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class RiceStash extends Item {
+public class OnigiriItem extends Item {
 
-    public static final Properties itemProperties = RiceStash.buildProperties();
+    public static final Properties itemProperties = OnigiriItem.buildProperties();
 
-    public RiceStash() {
+    public OnigiriItem() {
         super(itemProperties);
     }
 
@@ -26,7 +26,8 @@ public class RiceStash extends Item {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.tab(CreativeModeTab.TAB_MISC);
+        properties.food(new FoodProperties.Builder().nutrition(7).saturationMod(0.8F).build());
+        properties.tab(CreativeModeTab.TAB_FOOD);
 
         return properties;
     }

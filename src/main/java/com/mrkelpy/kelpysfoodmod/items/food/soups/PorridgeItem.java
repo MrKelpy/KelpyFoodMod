@@ -1,5 +1,4 @@
-package com.mrkelpy.kelpysfoodmod.items.food.general;
-
+package com.mrkelpy.kelpysfoodmod.items.food.soups;
 import com.mrkelpy.kelpysfoodmod.utils.ItemUtils;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.server.level.ServerPlayer;
@@ -14,15 +13,15 @@ import net.minecraft.world.level.Level;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
- * This class implements all the logic and features of the MeatSkewer item.
+ * This class implements all the logic and features of the Porridge item.
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class MeatSkewer extends Item {
+public class PorridgeItem extends Item {
 
-    private static final Properties itemProperties = MeatSkewer.buildProperties();
+    private static final Item.Properties itemProperties = PorridgeItem.buildProperties();
 
-    public MeatSkewer() {
+    public PorridgeItem() {
         super(itemProperties);
     }
 
@@ -33,16 +32,17 @@ public class MeatSkewer extends Item {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.food(new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).build());
+        properties.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).build());
         properties.tab(CreativeModeTab.TAB_FOOD);
 
         return properties;
     }
 
+
     /**
      * Expands upon the behaviour of the finishUsingItem method to give a stick back to the player
-     * after finishing eating a Meat Skewer.
-     * @param itemStack The ItemStack of the MeatSkewer.
+     * after finishing eating Porridge.
+     * @param itemStack The ItemStack of the Porridge.
      * @param world The level where the item was used.
      * @param livingEntity The entity that finished using the item
      * @return [ItemStack]
@@ -51,7 +51,7 @@ public class MeatSkewer extends Item {
     public ItemStack finishUsingItem(ItemStack itemStack, Level world, LivingEntity livingEntity) {
 
         if (!world.isClientSide() && livingEntity instanceof ServerPlayer serverplayer)
-            ItemUtils.giveItem(new ItemStack(Items.STICK), serverplayer);
+            ItemUtils.giveItem(new ItemStack(Items.BOWL), serverplayer);
 
         return super.finishUsingItem(itemStack, world, livingEntity);
     }

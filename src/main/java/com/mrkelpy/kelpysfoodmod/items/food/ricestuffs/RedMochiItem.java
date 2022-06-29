@@ -1,4 +1,4 @@
-package com.mrkelpy.kelpysfoodmod.items.food.mochi;
+package com.mrkelpy.kelpysfoodmod.items.food.ricestuffs;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 
@@ -9,9 +9,9 @@ import javax.annotation.ParametersAreNonnullByDefault;
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class RedMochi extends WhiteMochi {
+public class RedMochiItem extends WhiteMochiItem {
 
-    public RedMochi() {
+    public RedMochiItem() {
         super();
     }
 

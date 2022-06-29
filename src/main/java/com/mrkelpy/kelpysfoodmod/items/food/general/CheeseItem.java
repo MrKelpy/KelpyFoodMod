@@ -1,23 +1,23 @@
 package com.mrkelpy.kelpysfoodmod.items.food.general;
 
-import com.mrkelpy.kelpysfoodmod.setup.Registration;
 import net.minecraft.MethodsReturnNonnullByDefault;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.Item;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
- * This class implements all the logic and features of the Soybean item.
+ * This class implements all the logic and features of the Cheese item.
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class Soybean extends ItemNameBlockItem {
+public class CheeseItem extends Item {
 
-    public static final Properties itemProperties = Soybean.buildProperties();
+    private static final Properties itemProperties = CheeseItem.buildProperties();
 
-    public Soybean() {
-        super(Registration.SOYBEAN_PLANT.get(), itemProperties);
+    public CheeseItem() {
+        super(itemProperties);
     }
 
     /**
@@ -27,7 +27,8 @@ public class Soybean extends ItemNameBlockItem {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.tab(CreativeModeTab.TAB_MISC);
+        properties.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).build());
+        properties.tab(CreativeModeTab.TAB_FOOD);
 
         return properties;
     }

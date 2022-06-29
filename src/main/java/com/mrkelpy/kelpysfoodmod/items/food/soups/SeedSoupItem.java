@@ -1,4 +1,5 @@
-package com.mrkelpy.kelpysfoodmod.items.food.soup;
+package com.mrkelpy.kelpysfoodmod.items.food.soups;
+
 import com.mrkelpy.kelpysfoodmod.utils.ItemUtils;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.server.level.ServerPlayer;
@@ -13,15 +14,15 @@ import net.minecraft.world.level.Level;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
- * This class implements all the logic and features of the SweetPorridge item.
+ * This class implements all the logic and features of the SeedSoup item.
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class SweetPorridge extends Item {
+public class SeedSoupItem extends Item {
 
-    private static final Properties itemProperties = SweetPorridge.buildProperties();
+    private static final Item.Properties itemProperties = SeedSoupItem.buildProperties();
 
-    public SweetPorridge() {
+    public SeedSoupItem() {
         super(itemProperties);
     }
 
@@ -32,16 +33,17 @@ public class SweetPorridge extends Item {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.7F).build());
+        properties.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).build());
         properties.tab(CreativeModeTab.TAB_FOOD);
 
         return properties;
     }
 
+
     /**
      * Expands upon the behaviour of the finishUsingItem method to give a stick back to the player
-     * after finishing eating Sweet Porridge.
-     * @param itemStack The ItemStack of the Sweet Porridge.
+     * after finishing eating a Seed Soup.
+     * @param itemStack The ItemStack of the Seed Soup.
      * @param world The level where the item was used.
      * @param livingEntity The entity that finished using the item
      * @return [ItemStack]

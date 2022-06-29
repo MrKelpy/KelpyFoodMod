@@ -5,11 +5,14 @@
             "item": "minecraft:peony"
         },
         {
+            "item": "kelpysfoodmod:rice_stash"
+        },
+        {
             "item": "minecraft:sugar"
         }
     ],
     "result": {
         "item": "kelpysfoodmod:green_mochi",
-        "count": 1
+        "count": 4
     }
 }

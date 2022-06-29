@@ -1,4 +1,4 @@
-package com.mrkelpy.kelpysfoodmod.items.food.soup;
+package com.mrkelpy.kelpysfoodmod.items.food.soups;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 
@@ -9,9 +9,9 @@ import javax.annotation.ParametersAreNonnullByDefault;
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class CoagulatedSoyMilk extends CoagulatedMilk {
+public class CoagulatedSoyMilkItem extends CoagulatedMilkItem {
 
-    public CoagulatedSoyMilk() {
+    public CoagulatedSoyMilkItem() {
         super();
     }
 

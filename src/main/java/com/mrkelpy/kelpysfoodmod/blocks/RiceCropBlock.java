@@ -67,6 +67,24 @@ public class RiceCropBlock extends CropBlock {
         return voxelShapeArray;
     }
 
+    /**
+     * Rice can only be planted in shallow water;
+     * <br>
+     * Checks if the target fluid is water, and if the block ontop of the target is air, and if the
+     * one at the bottom isn't a fluid.
+     * <br>
+     * WARNING: When placing a crop down, this method will be called on all the adjacent crop blocks. This will also propagate down to the rest
+     */
+    @Override
+    public boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+
+        boolean isValidTop = pLevel.getBlockState(pPos.above()).is(Blocks.AIR) || pLevel.getBlockState(pPos.above()).is(Registration.RICE_PLANT.get());
+        boolean isWaterOnMiddle = pLevel.getFluidState(pPos).is(Fluids.WATER);
+        boolean isSolidBlockBelow = pLevel.getBlockState(pPos.below()).isFaceSturdy(pLevel, pPos.below(), Direction.UP);
+
+        return isValidTop && isWaterOnMiddle && isSolidBlockBelow;
+    }
+
     @Override
     public int getMaxAge() {
         return MAX_AGE;
@@ -82,22 +100,6 @@ public class RiceCropBlock extends CropBlock {
         return Registration.RICE_SEEDS.get();
     }
 
-    /**
-     * Rice can only be planted in shallow water;
-     * <br>
-     * Checks if the target fluid is water, and if the block ontop of the target is air, and if the
-     * one at the bottom isn't a fluid.
-     */
-    @Override
-    protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-
-        boolean isAirOnTop = pLevel.getBlockState(pPos.above().above()).is(Blocks.AIR);
-        boolean isWaterOnMiddle = pLevel.getFluidState(pPos.above()).is(Fluids.WATER);
-        boolean isSolidBlockBelow = pState.isFaceSturdy(pLevel, pPos, Direction.UP);
-
-        return isAirOnTop && isWaterOnMiddle && isSolidBlockBelow;
-    }
-
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return SHAPE_BY_AGE[pState.getValue(this.getAgeProperty())];
@@ -110,7 +112,7 @@ public class RiceCropBlock extends CropBlock {
 
     @Override
     public PlantType getPlantType(BlockGetter level, BlockPos pos) {
-        return PlantType.WATER;
+        return PlantType.get("drought");
     }
 }
 

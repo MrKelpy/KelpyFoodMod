@@ -12,11 +12,11 @@ import javax.annotation.ParametersAreNonnullByDefault;
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class Tofu extends Item {
+public class TofuItem extends Item {
 
-    private static final Properties itemProperties = Tofu.buildProperties();
+    private static final Properties itemProperties = TofuItem.buildProperties();
 
-    public Tofu() {
+    public TofuItem() {
         super(itemProperties);
     }
 

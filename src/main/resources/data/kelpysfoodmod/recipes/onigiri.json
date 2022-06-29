@@ -2,17 +2,17 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:lilac"
+            "item": "kelpysfoodmod:rice_stash"
         },
         {
             "item": "kelpysfoodmod:rice_stash"
         },
         {
-            "item": "minecraft:sugar"
+            "item": "kelpysfoodmod:rice_stash"
         }
     ],
     "result": {
-        "item": "kelpysfoodmod:green_mochi",
-        "count": 4
+        "item": "kelpysfoodmod:onigiri",
+        "count": 1
     }
 }

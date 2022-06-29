@@ -1,5 +1,4 @@
-package com.mrkelpy.kelpysfoodmod.items.food.general;
-
+package com.mrkelpy.kelpysfoodmod.items.food.ricestuffs;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
@@ -8,15 +7,15 @@ import net.minecraft.world.item.Item;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
- * This class implements all the logic and features of the BoiledEgg item.
+ * This class implements all the logic and features of the WhiteMochi item.
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class BoiledEgg extends Item {
+public class OnigiriKelpItem extends Item {
 
-    private static final Properties itemProperties = BoiledEgg.buildProperties();
+    public static final Properties itemProperties = OnigiriKelpItem.buildProperties();
 
-    public BoiledEgg() {
+    public OnigiriKelpItem() {
         super(itemProperties);
     }
 
@@ -27,7 +26,7 @@ public class BoiledEgg extends Item {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5F).build());
+        properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).build());
         properties.tab(CreativeModeTab.TAB_FOOD);
 
         return properties;

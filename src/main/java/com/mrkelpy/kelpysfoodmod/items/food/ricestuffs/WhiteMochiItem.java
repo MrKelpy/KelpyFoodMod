@@ -1,5 +1,4 @@
-package com.mrkelpy.kelpysfoodmod.items.food.general;
-
+package com.mrkelpy.kelpysfoodmod.items.food.ricestuffs;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
@@ -8,15 +7,15 @@ import net.minecraft.world.item.Item;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
- * This class implements all the logic and features of the Cheese item.
+ * This class implements all the logic and features of the WhiteMochi item.
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class Cheese extends Item {
+public class WhiteMochiItem extends Item {
 
-    private static final Properties itemProperties = Cheese.buildProperties();
+    public static final Item.Properties itemProperties = WhiteMochiItem.buildProperties();
 
-    public Cheese() {
+    public WhiteMochiItem() {
         super(itemProperties);
     }
 
@@ -27,7 +26,7 @@ public class Cheese extends Item {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.7F).build());
+        properties.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3F).fast().build());
         properties.tab(CreativeModeTab.TAB_FOOD);
 
         return properties;

@@ -2,14 +2,14 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:white_tulip"
+            "item": "kelpysfoodmod:onigiri"
         },
         {
-            "item": "minecraft:sugar"
+            "item": "minecraft:dried_kelp"
         }
     ],
     "result": {
-        "item": "kelpysfoodmod:white_mochi",
+        "item": "kelpysfoodmod:onigiri_kelp",
         "count": 1
     }
 }
