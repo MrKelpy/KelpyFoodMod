@@ -2,14 +2,14 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "kelpysfoodmod:porridge"
+            "item": "minecraft:glass_bottle"
         },
         {
-            "tag": "kelpysfoodmod:sugars"
+            "item": "kelpysfoodmod:honeysuckle"
         }
     ],
     "result": {
-        "item": "kelpysfoodmod:sweet_porridge",
+        "item": "minecraft:honey_bottle",
         "count": 1
     }
 }

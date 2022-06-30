@@ -1,16 +1,20 @@
 package com.mrkelpy.kelpysfoodmod.setup;
 
 import com.mrkelpy.kelpysfoodmod.KelpysFoodMod;
+import com.mrkelpy.kelpysfoodmod.blocks.HoneysuckleFlowerBlock;
 import com.mrkelpy.kelpysfoodmod.blocks.RiceCropBlock;
 import com.mrkelpy.kelpysfoodmod.blocks.SoybeanCropBlock;
 import com.mrkelpy.kelpysfoodmod.items.food.general.*;
 import com.mrkelpy.kelpysfoodmod.items.food.ricestuffs.*;
 import com.mrkelpy.kelpysfoodmod.items.food.soups.*;
 import com.mrkelpy.kelpysfoodmod.items.tools.PestleItem;
+import com.mrkelpy.kelpysfoodmod.other.CreativeTabFoods;
+import com.mrkelpy.kelpysfoodmod.other.CreativeTabItems;
 import com.mrkelpy.kelpysfoodmod.recipe.NoBucketRemainder.NoBucketRemainderRecipeSerializer;
 import com.mrkelpy.kelpysfoodmod.recipe.Pestle.PestleRecipeSerializer;
 import com.mrkelpy.kelpysfoodmod.recipe.Pestle.PestleRecipeType;
 import net.minecraft.core.Registry;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -38,10 +42,20 @@ public class Registration {
 
 
     /**
+     * CREATIVE TAB "REGISTRATION"
+     * <br>
+     * "Registration" is quoted because it isn't really registration, but it's here for convention
+     * and accessibility. A better term to refer to it, would be instantiation.
+     */
+    public static final CreativeModeTab CUSTOM_TAB_FOODS = new CreativeTabFoods();
+    public static final CreativeModeTab CUSTOM_TAB_ITEMS = new CreativeTabItems();
+
+    /**
      * BLOCKS REGISTRATION
      */
     public static final RegistryObject<Block> SOYBEAN_PLANT = BLOCKS.register("soybean_plant", SoybeanCropBlock::new);
     public static final RegistryObject<Block> RICE_PLANT = BLOCKS.register("rice_plant", RiceCropBlock::new);
+    public static final RegistryObject<Block> HONEYSUCKLE_PLANT = BLOCKS.register("honeysuckle_flower", HoneysuckleFlowerBlock::new);
 
     /**
      * ITEMS REGISTRATION
@@ -66,6 +80,7 @@ public class Registration {
     public static final RegistryObject<Item> RICE_STASH = ITEMS.register("rice_stash", RiceStashItem::new);
     public static final RegistryObject<Item> ONIGIRI = ITEMS.register("onigiri", OnigiriItem::new);
     public static final RegistryObject<Item> ONIGIRI_KELP = ITEMS.register("onigiri_kelp", OnigiriKelpItem::new);
+    public static final RegistryObject<Item> HONEYSUCKLE = ITEMS.register("honeysuckle", HoneysuckleItem::new);
     public static final RegistryObject<Item> PESTLE = ITEMS.register("pestle", PestleItem::new);
 
 

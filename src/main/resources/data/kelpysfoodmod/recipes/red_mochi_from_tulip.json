@@ -8,7 +8,7 @@
             "item": "kelpysfoodmod:rice_stash"
         },
         {
-            "item": "minecraft:sugar"
+            "tag": "kelpysfoodmod:sugars"
         }
     ],
     "result": {

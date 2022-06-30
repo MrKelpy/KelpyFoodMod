@@ -1,10 +1,11 @@
 package com.mrkelpy.kelpysfoodmod.items.food.soups;
+
+import com.mrkelpy.kelpysfoodmod.setup.Registration;
 import com.mrkelpy.kelpysfoodmod.utils.ItemUtils;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -33,7 +34,7 @@ public class PorridgeItem extends Item {
 
         Properties properties = new Properties();
         properties.food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).build());
-        properties.tab(CreativeModeTab.TAB_FOOD);
+        properties.tab(Registration.CUSTOM_TAB_FOODS);
 
         return properties;
     }

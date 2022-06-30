@@ -1,5 +1,6 @@
 package com.mrkelpy.kelpysfoodmod.items.food.general;
 
+import com.mrkelpy.kelpysfoodmod.setup.Registration;
 import com.mrkelpy.kelpysfoodmod.utils.ItemUtils;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.server.level.ServerPlayer;
@@ -7,7 +8,10 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -33,7 +37,7 @@ public class CoagulantItem extends Item {
 
         Properties properties = new Properties();
         properties.food(new FoodProperties.Builder().nutrition(0).saturationMod(0).alwaysEat().build());
-        properties.tab(CreativeModeTab.TAB_MATERIALS);
+        properties.tab(Registration.CUSTOM_TAB_ITEMS);
 
         return properties;
     }

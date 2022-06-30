@@ -9,7 +9,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
@@ -40,7 +39,7 @@ public class RiceSeedsItem extends ItemNameBlockItem {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.tab(CreativeModeTab.TAB_MISC);
+        properties.tab(Registration.CUSTOM_TAB_ITEMS);
 
         return properties;
     }
@@ -55,7 +54,7 @@ public class RiceSeedsItem extends ItemNameBlockItem {
 
     /**
      * Called to trigger the item's "innate" right click behavior. To handle when this item is used on a Block, see
-     * {@link #onItemUse}.
+     * {@link #useOn(UseOnContext)}.
      */
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {

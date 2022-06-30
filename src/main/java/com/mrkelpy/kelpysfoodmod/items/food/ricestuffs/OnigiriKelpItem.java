@@ -1,7 +1,8 @@
 package com.mrkelpy.kelpysfoodmod.items.food.ricestuffs;
+
+import com.mrkelpy.kelpysfoodmod.setup.Registration;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -27,7 +28,7 @@ public class OnigiriKelpItem extends Item {
 
         Properties properties = new Properties();
         properties.food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).build());
-        properties.tab(CreativeModeTab.TAB_FOOD);
+        properties.tab(Registration.CUSTOM_TAB_FOODS);
 
         return properties;
     }

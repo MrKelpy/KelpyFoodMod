@@ -2,7 +2,6 @@ package com.mrkelpy.kelpysfoodmod.items.food.general;
 
 import com.mrkelpy.kelpysfoodmod.setup.Registration;
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemNameBlockItem;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -27,7 +26,7 @@ public class SoybeanItem extends ItemNameBlockItem {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.tab(CreativeModeTab.TAB_MISC);
+        properties.tab(Registration.CUSTOM_TAB_ITEMS);
 
         return properties;
     }

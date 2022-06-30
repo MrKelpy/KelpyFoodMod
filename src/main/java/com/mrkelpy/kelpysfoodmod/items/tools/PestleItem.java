@@ -2,6 +2,7 @@ package com.mrkelpy.kelpysfoodmod.items.tools;
 
 import com.mrkelpy.kelpysfoodmod.recipe.Pestle.PestleRecipe;
 import com.mrkelpy.kelpysfoodmod.recipe.Pestle.PestleRecipeType;
+import com.mrkelpy.kelpysfoodmod.setup.Registration;
 import com.mrkelpy.kelpysfoodmod.utils.ItemUtils;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.sounds.SoundEvents;
@@ -10,7 +11,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
@@ -39,7 +39,7 @@ public class PestleItem extends Item {
     private static Item.Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.tab(CreativeModeTab.TAB_TOOLS);
+        properties.tab(Registration.CUSTOM_TAB_ITEMS);
         properties.stacksTo(1);
         properties.durability(250);
 

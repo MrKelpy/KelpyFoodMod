@@ -1,7 +1,7 @@
 package com.mrkelpy.kelpysfoodmod.items.food.ricestuffs;
 
+import com.mrkelpy.kelpysfoodmod.setup.Registration;
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -26,7 +26,7 @@ public class RiceStashItem extends Item {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.tab(CreativeModeTab.TAB_MISC);
+        properties.tab(Registration.CUSTOM_TAB_ITEMS);
 
         return properties;
     }
