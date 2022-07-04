@@ -17,7 +17,7 @@ public class HoneysuckleItem extends ItemNameBlockItem {
     private static final Properties itemProperties = HoneysuckleItem.buildProperties();
 
     public HoneysuckleItem() {
-        super(Registration.HONEYSUCKLE_PLANT.get(), itemProperties);
+        super(Registration.HONEYSUCKLE_FLOWER.get(), itemProperties);
     }
 
     /**

@@ -55,7 +55,7 @@ public class Registration {
      */
     public static final RegistryObject<Block> SOYBEAN_PLANT = BLOCKS.register("soybean_plant", SoybeanCropBlock::new);
     public static final RegistryObject<Block> RICE_PLANT = BLOCKS.register("rice_plant", RiceCropBlock::new);
-    public static final RegistryObject<Block> HONEYSUCKLE_PLANT = BLOCKS.register("honeysuckle_flower", HoneysuckleFlowerBlock::new);
+    public static final RegistryObject<Block> HONEYSUCKLE_FLOWER = BLOCKS.register("honeysuckle_flower", HoneysuckleFlowerBlock::new);
 
     /**
      * ITEMS REGISTRATION

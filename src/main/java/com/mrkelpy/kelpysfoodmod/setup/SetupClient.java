@@ -7,13 +7,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 public class SetupClient {
 
-    public SetupClient() {}
-
     @SubscribeEvent
     public void RenderSetup(FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(Registration.SOYBEAN_PLANT.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(Registration.RICE_PLANT.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(Registration.HONEYSUCKLE_PLANT.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(Registration.HONEYSUCKLE_FLOWER.get(), RenderType.cutout());
     }
 
 }
