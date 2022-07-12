@@ -11,9 +11,6 @@
         },
         "age=3": {
             "model": "kelpysfoodmod:block/rice_plant_stage3"
-        },
-        "age=4": {
-            "model": "kelpysfoodmod:block/rice_plant_stage4"
         }
     }
 }

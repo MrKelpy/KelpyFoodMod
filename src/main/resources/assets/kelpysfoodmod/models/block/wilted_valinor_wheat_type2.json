@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/crop",
+    "textures": {
+        "crop": "kelpysfoodmod:blocks/wilted_valinor_wheat_type2"
+    }
+}

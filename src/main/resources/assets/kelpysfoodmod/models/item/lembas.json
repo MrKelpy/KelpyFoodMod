@@ -1,0 +1,9 @@
+{
+    "parent": "kelpysfoodmod:item/lembas_default",
+    "overrides": [
+        {
+            "predicate": { "held": 1 },
+            "model": "kelpysfoodmod:item/lembas_held"
+        }
+    ]
+}

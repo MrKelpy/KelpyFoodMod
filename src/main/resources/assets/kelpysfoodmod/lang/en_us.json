@@ -20,11 +20,13 @@
     "item.kelpysfoodmod.rice_stash": "Rice Stash",
     "item.kelpysfoodmod.onigiri": "Onigiri",
     "item.kelpysfoodmod.onigiri_kelp": "Onigiri",
-    "item.kelpysfoodmod.honeysuckle": "Honeysuckle",
+    "item.kelpysfoodmod.valinor_wheat": "Valinor Wheat",
+    "item.kelpysfoodmod.valinor_wheat_seeds": "Valinor Wheat Seeds",
+    "item.kelpysfoodmod.lembas": "Lembas",
 
     "blocks.kelpysfoodmod.soybean_plant": "Soybeans",
     "blocks.kelpysfoodmod.rice_plant": "Rice",
-    "blocks.kelpysfoodmod.honeysuckle_flower": "Honeysuckle",
+    "blocks.kelpysfoodmod.valinor_wheat_plant": "Valinor Wheat",
 
     "itemGroup.kelpysfoodmod.foodTab": "Kelp's Foods",
     "itemGroup.kelpysfoodmod.itemsTab": "Kelp's Items"

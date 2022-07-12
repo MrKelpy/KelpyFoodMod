@@ -3,7 +3,7 @@ package com.mrkelpy.kelpysfoodmod.items.food.general;
 import com.mrkelpy.kelpysfoodmod.setup.Registration;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.Item;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -12,12 +12,12 @@ import javax.annotation.ParametersAreNonnullByDefault;
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class HoneysuckleItem extends ItemNameBlockItem {
+public class LembasItem extends Item {
 
-    private static final Properties itemProperties = HoneysuckleItem.buildProperties();
+    private static final Properties itemProperties = LembasItem.buildProperties();
 
-    public HoneysuckleItem() {
-        super(Registration.HONEYSUCKLE_FLOWER.get(), itemProperties);
+    public LembasItem() {
+        super(itemProperties);
     }
 
     /**
@@ -27,9 +27,10 @@ public class HoneysuckleItem extends ItemNameBlockItem {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.food(new FoodProperties.Builder().nutrition(2).saturationMod(0.6F).alwaysEat().fast().build());
+        properties.food(new FoodProperties.Builder().nutrition(10).saturationMod(2.0F).build());
         properties.tab(Registration.CUSTOM_TAB_FOODS);
 
         return properties;
     }
+
 }

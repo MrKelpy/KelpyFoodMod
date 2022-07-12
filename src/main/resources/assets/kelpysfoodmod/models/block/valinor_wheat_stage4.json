@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/crop",
+    "textures": {
+        "crop": "kelpysfoodmod:blocks/valinor_wheat_stage4"
+    }
+}

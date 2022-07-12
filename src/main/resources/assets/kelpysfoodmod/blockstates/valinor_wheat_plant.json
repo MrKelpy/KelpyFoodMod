@@ -1,0 +1,37 @@
+{
+    "variants": {
+        "age=0,wilted=false": {
+            "model": "kelpysfoodmod:block/valinor_wheat_stage0"
+        },
+        "age=1,wilted=false": {
+            "model": "kelpysfoodmod:block/valinor_wheat_stage1"
+        },
+        "age=2,wilted=false": {
+            "model": "kelpysfoodmod:block/valinor_wheat_stage2"
+        },
+        "age=3,wilted=false": {
+            "model": "kelpysfoodmod:block/valinor_wheat_stage3"
+        },
+        "age=4,wilted=false": {
+            "model": "kelpysfoodmod:block/valinor_wheat_stage4"
+        },
+        "age=5,wilted=false": {
+            "model": "kelpysfoodmod:block/valinor_wheat_stage5"
+        },
+        "age=6,wilted=false": {
+            "model": "kelpysfoodmod:block/valinor_wheat_stage6"
+        },
+        "age=7,wilted=false": {
+            "model": "kelpysfoodmod:block/valinor_wheat_stage7"
+        },
+        "age=3,wilted=true": {
+            "model": "kelpysfoodmod:block/wilted_valinor_wheat_type0"
+        },
+        "age=4,wilted=true": {
+            "model": "kelpysfoodmod:block/wilted_valinor_wheat_type1"
+        },
+        "age=5,wilted=true": {
+            "model": "kelpysfoodmod:block/wilted_valinor_wheat_type2"
+        }
+    }
+}

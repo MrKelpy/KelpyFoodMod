@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "WWW",
+        "   ",
+        "   "
+    ],
+    "key": {
+        "W": {
+            "tag": "kelpysfoodmod:valinor_wheat"
+        }
+    },
+    "result": {
+        "item": "kelpysfoodmod:lembas",
+        "count": 1
+    }
+}

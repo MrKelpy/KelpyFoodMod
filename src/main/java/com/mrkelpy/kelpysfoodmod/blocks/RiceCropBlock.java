@@ -26,7 +26,6 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
  * This class implements the logic and features of the RiceCropBlock block.
- * This block is a crop that when harvests drops Soybeans.
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault

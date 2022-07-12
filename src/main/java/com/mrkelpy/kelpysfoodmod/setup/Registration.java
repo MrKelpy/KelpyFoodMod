@@ -1,9 +1,9 @@
 package com.mrkelpy.kelpysfoodmod.setup;
 
 import com.mrkelpy.kelpysfoodmod.KelpysFoodMod;
-import com.mrkelpy.kelpysfoodmod.blocks.HoneysuckleFlowerBlock;
 import com.mrkelpy.kelpysfoodmod.blocks.RiceCropBlock;
 import com.mrkelpy.kelpysfoodmod.blocks.SoybeanCropBlock;
+import com.mrkelpy.kelpysfoodmod.blocks.ValinorWheatCropBlock;
 import com.mrkelpy.kelpysfoodmod.items.food.general.*;
 import com.mrkelpy.kelpysfoodmod.items.food.ricestuffs.*;
 import com.mrkelpy.kelpysfoodmod.items.food.soups.*;
@@ -55,8 +55,7 @@ public class Registration {
      */
     public static final RegistryObject<Block> SOYBEAN_PLANT = BLOCKS.register("soybean_plant", SoybeanCropBlock::new);
     public static final RegistryObject<Block> RICE_PLANT = BLOCKS.register("rice_plant", RiceCropBlock::new);
-    public static final RegistryObject<Block> HONEYSUCKLE_FLOWER = BLOCKS.register("honeysuckle_flower", HoneysuckleFlowerBlock::new);
-
+    public static final RegistryObject<Block> VALINOR_WHEAT_PLANT = BLOCKS.register("valinor_wheat_plant", ValinorWheatCropBlock::new);
     /**
      * ITEMS REGISTRATION
      */
@@ -80,7 +79,9 @@ public class Registration {
     public static final RegistryObject<Item> RICE_STASH = ITEMS.register("rice_stash", RiceStashItem::new);
     public static final RegistryObject<Item> ONIGIRI = ITEMS.register("onigiri", OnigiriItem::new);
     public static final RegistryObject<Item> ONIGIRI_KELP = ITEMS.register("onigiri_kelp", OnigiriKelpItem::new);
-    public static final RegistryObject<Item> HONEYSUCKLE = ITEMS.register("honeysuckle", HoneysuckleItem::new);
+    public static final RegistryObject<Item> VALINOR_WHEAT_SEEDS = ITEMS.register("valinor_wheat_seeds", ValinorWheatSeedsItem::new);
+    public static final RegistryObject<Item> VALINOR_WHEAT = ITEMS.register("valinor_wheat", ValinorWheatItem::new);
+    public static final RegistryObject<Item> LEMBAS = ITEMS.register("lembas", LembasItem::new);
     public static final RegistryObject<Item> PESTLE = ITEMS.register("pestle", PestleItem::new);
 
 
