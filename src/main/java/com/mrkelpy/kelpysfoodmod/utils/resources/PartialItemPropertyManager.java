@@ -43,7 +43,7 @@ public abstract class PartialItemPropertyManager {
     public ArrayList<PartialItemProperty> getProperties(String... requestedProperties) {
 
         List<String> requestedPropertyList = Arrays.asList(requestedProperties);
-        return (ArrayList<PartialItemProperty>) getProperties().stream().filter(p -> requestedPropertyList.contains(p.itemPropertyName)).collect(Collectors.toList());
+        return (ArrayList<PartialItemProperty>) this.getProperties().stream().filter(p -> requestedPropertyList.contains(p.itemPropertyName)).collect(Collectors.toList());
     }
 
     /**

@@ -80,7 +80,7 @@ public class PestleItem extends Item {
         // If the player is not holding shift, only one item will be crafted at use.
         if (!player.isShiftKeyDown()) {
 
-            this.executeNormalBehaviour(recipe, inventory, player);
+            this.executePestleCrafting(recipe, inventory, player);
             return super.use(world, player, interactionHand);
         }
 
@@ -89,7 +89,7 @@ public class PestleItem extends Item {
         for (int i = 0; i < ingredientCount; i++) {
 
             // If the item fails to be created (due to the lack of durability), break the loop.
-            if (!this.executeNormalBehaviour(recipe, inventory, player))
+            if (!this.executePestleCrafting(recipe, inventory, player))
                 break;
         }
 
@@ -102,7 +102,7 @@ public class PestleItem extends Item {
      * @param inventory [Inventory] The inventory of the player.
      * @param player [Player] The player who is crafting the recipe.
      */
-    private boolean executeNormalBehaviour(PestleRecipe recipe, Inventory inventory, Player player) {
+    private boolean executePestleCrafting(PestleRecipe recipe, Inventory inventory, Player player) {
 
         // Assembles the item stack to be returned and gives the item to the player
         ItemStack pestleItem = inventory.getSelected();

@@ -77,9 +77,11 @@ public class ValinorWheatCropBlock extends CropBlock {
         for (int x = -1; x <= 1; x++) {
             for (int z = -1; z <= 1; z++) {
 
-                Block block = pLevel.getBlockState(mutableBlockPos.set(pPos.getX() + x, pPos.getY(), pPos.getZ() + z)).getBlock();
-                if (block != Blocks.AIR && block != pState.getBlock() && !pState.getValue(IS_WILTED))
-                    return false;
+                BlockState targetState = pLevel.getBlockState(mutableBlockPos.set(pPos.getX() + x, pPos.getY(), pPos.getZ() + z));
+                if (targetState.getBlock() == Blocks.AIR || (targetState.getBlock() == pState.getBlock() && !targetState.getValue(IS_WILTED)))
+                    continue;
+
+                return false;
             }
         }
         return true;

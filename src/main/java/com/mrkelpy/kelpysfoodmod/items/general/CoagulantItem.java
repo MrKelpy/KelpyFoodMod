@@ -1,9 +1,11 @@
-package com.mrkelpy.kelpysfoodmod.items.food.soups;
+package com.mrkelpy.kelpysfoodmod.items.general;
 
 import com.mrkelpy.kelpysfoodmod.setup.Registration;
 import com.mrkelpy.kelpysfoodmod.utils.ItemUtils;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
@@ -15,15 +17,15 @@ import net.minecraft.world.level.Level;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
- * This class implements all the logic and features of the SoyMilk item.
+ * This class implements all the logic and features of the Coagulant item.
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class SoyMilkItem extends Item {
+public class CoagulantItem extends Item {
 
-    private static final Properties itemProperties = SoyMilkItem.buildProperties();
+    private static final Properties itemProperties = CoagulantItem.buildProperties();
 
-    public SoyMilkItem() {
+    public CoagulantItem() {
         super(itemProperties);
     }
 
@@ -34,10 +36,8 @@ public class SoyMilkItem extends Item {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F).alwaysEat().build());
+        properties.food(new FoodProperties.Builder().nutrition(0).saturationMod(0).alwaysEat().build());
         properties.tab(Registration.CUSTOM_TAB_ITEMS);
-        properties.stacksTo(1);
-        properties.craftRemainder(Items.BUCKET);
 
         return properties;
     }
@@ -47,11 +47,10 @@ public class SoyMilkItem extends Item {
         return UseAnim.DRINK;
     }
 
-
     /**
      * Expands upon the behaviour of the finishUsingItem method to give a stick back to the player
-     * after finishing drinking the Soy Milk.
-     * @param itemStack The ItemStack of the Soy Milk.
+     * after finishing drinking the Coagulant.
+     * @param itemStack The ItemStack of the Coagulant.
      * @param world The level where the item was used.
      * @param livingEntity The entity that finished using the item
      * @return [ItemStack]
@@ -60,7 +59,9 @@ public class SoyMilkItem extends Item {
     public ItemStack finishUsingItem(ItemStack itemStack, Level world, LivingEntity livingEntity) {
 
         if (!world.isClientSide() && livingEntity instanceof ServerPlayer serverplayer) {
-            ItemUtils.giveItem(new ItemStack(Items.BUCKET), serverplayer);
+            ItemUtils.giveItem(new ItemStack(Items.GLASS_BOTTLE), serverplayer);
+            serverplayer.addEffect(new MobEffectInstance(MobEffects.POISON, 3*20, 3));
+            serverplayer.addEffect(new MobEffectInstance(MobEffects.HUNGER, 10*20, 3));
         }
 
         return super.finishUsingItem(itemStack, world, livingEntity);

@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "   ",
+        " F ",
+        "FFF"
+    ],
+    "key": {
+        "F": {
+            "item": "kelpysfoodmod:flour"
+        }
+    },
+    "result": {
+        "item": "kelpysfoodmod:dumpling",
+        "count": 2
+    }
+}

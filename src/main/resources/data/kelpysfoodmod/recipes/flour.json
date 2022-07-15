@@ -1,0 +1,8 @@
+{
+    "type": "kelpysfoodmod:pestle_crafting",
+    "ingredient": "minecraft:wheat",
+    "result": {
+        "item": "kelpysfoodmod:flour",
+        "count": 1
+    }
+}

@@ -4,9 +4,9 @@ import com.mrkelpy.kelpysfoodmod.KelpysFoodMod;
 import com.mrkelpy.kelpysfoodmod.blocks.RiceCropBlock;
 import com.mrkelpy.kelpysfoodmod.blocks.SoybeanCropBlock;
 import com.mrkelpy.kelpysfoodmod.blocks.ValinorWheatCropBlock;
-import com.mrkelpy.kelpysfoodmod.items.food.general.*;
-import com.mrkelpy.kelpysfoodmod.items.food.ricestuffs.*;
+import com.mrkelpy.kelpysfoodmod.items.food.*;
 import com.mrkelpy.kelpysfoodmod.items.food.soups.*;
+import com.mrkelpy.kelpysfoodmod.items.general.*;
 import com.mrkelpy.kelpysfoodmod.items.tools.PestleItem;
 import com.mrkelpy.kelpysfoodmod.other.CreativeTabFoods;
 import com.mrkelpy.kelpysfoodmod.other.CreativeTabItems;
@@ -56,23 +56,21 @@ public class Registration {
     public static final RegistryObject<Block> SOYBEAN_PLANT = BLOCKS.register("soybean_plant", SoybeanCropBlock::new);
     public static final RegistryObject<Block> RICE_PLANT = BLOCKS.register("rice_plant", RiceCropBlock::new);
     public static final RegistryObject<Block> VALINOR_WHEAT_PLANT = BLOCKS.register("valinor_wheat_plant", ValinorWheatCropBlock::new);
+
     /**
      * ITEMS REGISTRATION
      */
-    public static final RegistryObject<Item> DANGO = ITEMS.register("dango", DangoItem::new);
-    public static final RegistryObject<Item> RED_MOCHI = ITEMS.register("red_mochi", RedMochiItem::new);
-    public static final RegistryObject<Item> WHITE_MOCHI = ITEMS.register("white_mochi", WhiteMochiItem::new);
-    public static final RegistryObject<Item> GREEN_MOCHI = ITEMS.register("green_mochi", GreenMochiItem::new);
+    public static final RegistryObject<Item> PESTLE = ITEMS.register("pestle", PestleItem::new);
     public static final RegistryObject<Item> SEED_SOUP = ITEMS.register("seed_soup", SeedSoupItem::new);
     public static final RegistryObject<Item> PORRIDGE = ITEMS.register("porridge", PorridgeItem::new);
     public static final RegistryObject<Item> SWEET_PORRIDGE = ITEMS.register("sweet_porridge", SweetPorridgeItem::new);
-    public static final RegistryObject<Item> MEAT_SKEWER = ITEMS.register("meat_skewer", MeatSkewerItem::new);
+    public static final RegistryObject<Item> SWEET_BERRY_SOUP = ITEMS.register("sweet_berry_soup", SweetBerrySoup::new);
     public static final RegistryObject<Item> BOILED_EGG = ITEMS.register("boiled_egg", BoiledEggItem::new);
     public static final RegistryObject<Item> COAGULANT = ITEMS.register("coagulant", CoagulantItem::new);
     public static final RegistryObject<Item> COAGULATED_MILK = ITEMS.register("coagulated_milk", CoagulatedMilkItem::new);
     public static final RegistryObject<Item> COAGULATED_SOY_MILK = ITEMS.register("coagulated_soy_milk", CoagulatedSoyMilkItem::new);
-    public static final RegistryObject<Item> SOYBEAN = ITEMS.register("soybean", SoybeanItem::new);
     public static final RegistryObject<Item> SOY_MILK = ITEMS.register("soy_milk", SoyMilkItem::new);
+    public static final RegistryObject<Item> SOYBEAN = ITEMS.register("soybean", SoybeanItem::new);
     public static final RegistryObject<Item> CHEESE = ITEMS.register("cheese", CheeseItem::new);
     public static final RegistryObject<Item> TOFU = ITEMS.register("tofu", TofuItem::new);
     public static final RegistryObject<Item> RICE_SEEDS = ITEMS.register("rice_seeds", RiceSeedsItem::new);
@@ -81,9 +79,10 @@ public class Registration {
     public static final RegistryObject<Item> ONIGIRI_KELP = ITEMS.register("onigiri_kelp", OnigiriKelpItem::new);
     public static final RegistryObject<Item> VALINOR_WHEAT_SEEDS = ITEMS.register("valinor_wheat_seeds", ValinorWheatSeedsItem::new);
     public static final RegistryObject<Item> VALINOR_WHEAT = ITEMS.register("valinor_wheat", ValinorWheatItem::new);
+    public static final RegistryObject<Item> FLOUR = ITEMS.register("flour", FlourItem::new);
+    public static final RegistryObject<Item> DUMPLING = ITEMS.register("dumpling", DumplingItem::new);
+    public static final RegistryObject<Item> TAKOYAKI = ITEMS.register("takoyaki", TakoyakiItem::new);
     public static final RegistryObject<Item> LEMBAS = ITEMS.register("lembas", LembasItem::new);
-    public static final RegistryObject<Item> PESTLE = ITEMS.register("pestle", PestleItem::new);
-
 
     /**
      * RECIPE REGISTRATION

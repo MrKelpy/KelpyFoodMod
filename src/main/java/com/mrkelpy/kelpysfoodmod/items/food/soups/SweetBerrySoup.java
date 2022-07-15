@@ -9,21 +9,20 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
- * This class implements all the logic and features of the SoyMilk item.
+ * This class implements all the logic and features of the SweetBerrySoup item.
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class SoyMilkItem extends Item {
+public class SweetBerrySoup extends Item {
 
-    private static final Properties itemProperties = SoyMilkItem.buildProperties();
+    private static final Properties itemProperties = SweetBerrySoup.buildProperties();
 
-    public SoyMilkItem() {
+    public SweetBerrySoup() {
         super(itemProperties);
     }
 
@@ -34,24 +33,17 @@ public class SoyMilkItem extends Item {
     private static Properties buildProperties() {
 
         Properties properties = new Properties();
-        properties.food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F).alwaysEat().build());
-        properties.tab(Registration.CUSTOM_TAB_ITEMS);
-        properties.stacksTo(1);
-        properties.craftRemainder(Items.BUCKET);
+        properties.food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build());
+        properties.tab(Registration.CUSTOM_TAB_FOODS);
 
         return properties;
-    }
-
-    @Override
-    public UseAnim getUseAnimation(ItemStack itemStack) {
-        return UseAnim.DRINK;
     }
 
 
     /**
      * Expands upon the behaviour of the finishUsingItem method to give a stick back to the player
-     * after finishing drinking the Soy Milk.
-     * @param itemStack The ItemStack of the Soy Milk.
+     * after finishing eating a soup.
+     * @param itemStack The ItemStack of the Seed Soup.
      * @param world The level where the item was used.
      * @param livingEntity The entity that finished using the item
      * @return [ItemStack]
@@ -59,9 +51,8 @@ public class SoyMilkItem extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack itemStack, Level world, LivingEntity livingEntity) {
 
-        if (!world.isClientSide() && livingEntity instanceof ServerPlayer serverplayer) {
-            ItemUtils.giveItem(new ItemStack(Items.BUCKET), serverplayer);
-        }
+        if (!world.isClientSide() && livingEntity instanceof ServerPlayer serverplayer)
+            ItemUtils.giveItem(new ItemStack(Items.BOWL), serverplayer);
 
         return super.finishUsingItem(itemStack, world, livingEntity);
     }

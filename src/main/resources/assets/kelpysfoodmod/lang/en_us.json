@@ -1,8 +1,4 @@
 {
-    "item.kelpysfoodmod.dango": "Dango",
-    "item.kelpysfoodmod.red_mochi": "Red Mochi",
-    "item.kelpysfoodmod.white_mochi": "White Mochi",
-    "item.kelpysfoodmod.green_mochi": "Green Mochi",
     "item.kelpysfoodmod.seed_soup": "Seed Soup",
     "item.kelpysfoodmod.porridge": "Porridge",
     "item.kelpysfoodmod.pestle": "Pestle",
@@ -23,6 +19,11 @@
     "item.kelpysfoodmod.valinor_wheat": "Valinor Wheat",
     "item.kelpysfoodmod.valinor_wheat_seeds": "Valinor Wheat Seeds",
     "item.kelpysfoodmod.lembas": "Lembas",
+    "item.kelpysfoodmod.sweet_berry_soup": "Sweet Berry Soup",
+    "item.kelpysfoodmod.flour": "Flour",
+    "item.kelpysfoodmod.dumpling": "Dumpling",
+    "item.kelpysfoodmod.takoyaki": "Fish Takoyaki",
+
 
     "blocks.kelpysfoodmod.soybean_plant": "Soybeans",
     "blocks.kelpysfoodmod.rice_plant": "Rice",
